@@ -1,4 +1,6 @@
 .*.txt
 [._]*.swap
+[._]*.swp
+
 *.bash
 
