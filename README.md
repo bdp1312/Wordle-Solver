@@ -3,7 +3,7 @@ You COULD use grep. But I've added a python script that can solve the puzzle for
 All your friends will be jellous as you forge your unbeatable streak!!!!
 
 **USAGE**
-Use git to clone your this repo home directory ( moving into another directory will require editing the source code)
+Use git to clone this repo to your home directory ( moving into another directory will require editing the source code)
 Run WordleSolver.py with python3
 When prompted to enter results of world: 
  Divde all letters with ' ' (space)
