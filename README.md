@@ -10,7 +10,7 @@ When prompted to enter results of world:
  Prefix letter with "!" if it is not in the word
  Prefix letter with "\*" if it is in the word but in the wrong postion
  
-E N J O Y   Y A L L !
+E N J O Y _ Y A L L !
 
 
 # wordle-list
