@@ -2,7 +2,10 @@
 '''
 portions of this code were copied from https://gist.github.com/magnusviri/a93b5ab02663f30eac176ca49b0250e3
 ty m8!
+https://magnusviri.com/wordle.html
 '''
+
+#TODO add remember eleminated letters
 #TODO add elimination guess algorith
 #TODO add frequency guess OR elemination heuristic
 
