@@ -5,8 +5,7 @@ ty m8!
 https://magnusviri.com/wordle.html
 '''
 
-#TODO add remember eleminated letters
-#TODO add elimination guess algorith
+#TODO add elimination guess 
 #TODO add frequency guess OR elemination heuristic
 
 
@@ -39,7 +38,6 @@ def letterFrequencySort(words, letters):
     #word[n] = l for pLetteres[i] = (n, l) 
     #word contians all in inLetters
     #word does not contain any of outLetters
-    #TODO filter words that contain inLetter only at a wrong position
 def filterWords(words, outLetters, inLetters, pLetters): 
     filteredWords = []
     for w in words:
@@ -51,7 +49,9 @@ def filterWords(words, outLetters, inLetters, pLetters):
                 break
         if notMatch == 0:
             for i in inLetters:
-                if i not in w:
+                #print(i)
+                #print(w[i[0]])
+                if i[1] not in w or w[i[0]] == i[1]:
                     notMatch = 1
          #           print(i+" not in "+w)
                     break
@@ -65,7 +65,7 @@ def filterWords(words, outLetters, inLetters, pLetters):
                     filteredWords.append(w)
     return filteredWords
                     
-            
+#translates correctly formated input string into input data sturcture            
 def fwArgFormat(inStr):
     argv = [[], [], []]
     letterArgs = inStr.split()
@@ -74,12 +74,12 @@ def fwArgFormat(inStr):
         if letterArgs[i][0] == '!':
             argv[0].append(letterArgs[i][1])
         elif letterArgs[i][0] == '*':
-            argv[1].append(letterArgs[i][1])
+            argv[1].append((i, letterArgs[i][1]))
         else:
             argv[2].append((i, letterArgs[i][0]))
     return argv
 #full file name
-wordFilePath = expanduser("~/Wordle_Solver/.words.txt")
+wordFilePath = expanduser("~/Wordle_Solver/words.txt")
 
 
 #open file
@@ -131,7 +131,7 @@ while(True):
 
     #get updated word information from guess
     testArg = fwArgFormat(inStr)
-    curList = filterWords(masterList, testArg[0], testArg[1], testArg[2])
+    curList = filterWords(curList, testArg[0], testArg[1], testArg[2])
    
 
 print("Exiting")
