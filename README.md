@@ -1,4 +1,20 @@
+# Wordle-Solver
+You COULD use grep. But I've added a python script that can solve the puzzle for you. 
+All your friends will be jellous as you forge your unbeatable streak!!!!
+
+**USAGE**
+Use git to clone your this repo home directory ( moving into another directory will require editing the source code)
+Run WordleSolver.py with python3
+When prompted to enter results of world: 
+ Divde all letters with ' ' (space)
+ Prefix letter with "!" if it is not in the word
+ Prefix letter with "\*" if it is in the word but in the wrong postion
+ 
+E N J O Y   Y A L L !
+
+
 # wordle-list
+_____________________________
 A randomly-ordered list of all possible words that are potentially valid in wordle, taken straight from the game's source code. Use it like:
 
 ```bash
