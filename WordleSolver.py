@@ -79,17 +79,16 @@ def fwArgFormat(inStr):
             argv[2].append((i, letterArgs[i][0]))
     return argv
 #full file name
-wordFilePath = expanduser("~/Wordle_Solver/words.txt")
-
+#wordFilePath = expanduser("~/Wordle_Solver/words.txt")
+wordFilePath = expanduser("./words.txt")
 
 #open file
 if exists(wordFilePath):
     fh = open(wordFilePath, 'r')
    #print("File Open")
-'''
+
 else:
     pprint("File Not Found.")
-'''
 
 #add each word to list
 masterList = []
@@ -116,8 +115,13 @@ print(curList)
 '''
 curList = masterList
 
+#list holds remaining unknown letters
+remainingLetters = list(ascii_lowercase)
 while(True):
 #while there is more than 1 possible word:
+
+    #determine viability of letter brute force
+
 
     #analize letter frequency
     #sort words by sum of letter frequency
@@ -130,7 +134,9 @@ while(True):
         break
 
     #get updated word information from guess
-    testArg = fwArgFormat(inStr)
+    testArg = fwArgFormat(inStr) #outLetters, inLetters, pLetters
+    for e in testArg:
+        print(e)
     curList = filterWords(curList, testArg[0], testArg[1], testArg[2])
    
 
