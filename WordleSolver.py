@@ -14,6 +14,17 @@ from os.path import expanduser
 from string import ascii_lowercase
 from pprint import pprint
 
+#factorial function: returns -1 if invalid error is given
+def factorial(n):
+    if n > 1:
+        result = 1
+        for i in range(1, n):
+            result = result * i
+    elif n < 0:
+        result = -1
+    return esult
+
+        
 #sums frequency of each letter in letters
 #returns sorted list of tuple (s, w) where s is the sum of the frequency of each unique letter in w
 def letterFrequencySort(words, letters):
@@ -114,6 +125,7 @@ curList = filterWords(masterList, testArg[0], testArg[1], testArg[2])
 print(curList)
 '''
 curList = masterList
+guess = 0
 
 #list holds remaining unknown letters
 remainingLetters = list(ascii_lowercase)
@@ -126,9 +138,13 @@ while(True):
     #analize letter frequency
     #sort words by sum of letter frequency
     wordScores = letterFrequencySort(curList, ascii_lowercase)
-    #select word with greatest score
-    print("Best guess: "+str(wordScores[0]))
+    for w in wordScores:
+        print(w[1] + ": " + str(w[0]))
 
+    #select word with greatest score
+    print("Guess "+str(guess)+": "+str(wordScores[0]))
+    guess = guess + 1
+    
     inStr = input("Input guess result or press 'q' to exit\n")
     if inStr == 'q':
         break
